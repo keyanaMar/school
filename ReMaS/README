@@ -1,0 +1,33 @@
+CREATE DATABASE ReMaS;
+
+CREATE TABLE Apparaten (
+    ID int NOT NULL AUTO_INCREMENT,
+    Naam varchar(255)NOT NULL UNIQUE,
+    Omschrijving varchar(255),
+    Vergoeding varchar(255)NOT NULL,
+    GewichtGr varchar(255),
+    PRIMARY KEY (ID)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE OnderdeelApparaat (
+    ID int NOT NULL AUTO_INCREMENT,
+    perscentage INT,
+    OnderdeelID INT,
+    ApparaatID INT,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (ApparaatID) REFERENCES apparaten(ID),
+    FOREIGN KEY (OnderdeelID) REFERENCES onderdelen(ID)
+);
